@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tile Detail | Bharat Hardware</title>
+  <meta name="description" content="Explore details, specifications, and room visualizations for this premium tile design at Bharat Hardware.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="noise-overlay">
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.webp" alt="BH Logo" class="nav-logo-icon" width="44" height="44" style="object-fit: cover;" />
+        <div class="nav-logo-text">
+          <div class="nav-logo-brand">BHARAT</div>
+          <div class="nav-logo-sub">Hardware</div>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">
+          <span class="nav-link-text">Home</span>
+          <div class="nav-link-line"></div>
+        </a>
+        <a href="tiles.html" class="nav-link active">
+          <span class="nav-link-text active">Collections</span>
+          <div class="nav-link-line" style="width: 100%"></div>
+        </a>
+        <a href="index.html#showroom" class="nav-link">
+          <span class="nav-link-text">Showroom</span>
+          <div class="nav-link-line"></div>
+        </a>
+      </div>
+
+      <div class="nav-right">
+        <a href="wishlist.html" class="nav-wishlist-btn" aria-label="Wishlist">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+          </svg>
+          <span class="wishlist-badge" style="display: none;">0</span>
+        </a>
+        <a href="https://wa.me/919101400814" target="_blank" rel="noopener noreferrer" class="nav-whatsapp" aria-label="WhatsApp">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+          </svg>
+        </a>
+        <button class="hamburger" aria-label="Menu">
+          <div class="hamburger-line"></div>
+          <div class="hamburger-line"></div>
+          <div class="hamburger-line"></div>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu">
+    <div class="mobile-menu-links">
+      <a href="index.html" class="mobile-menu-link">Home</a>
+      <a href="tiles.html" class="mobile-menu-link active">Collections</a>
+      <a href="index.html#showroom" class="mobile-menu-link">Showroom</a>
+    </div>
+    <div class="mobile-menu-cta">
+      <a href="https://wa.me/919101400814" target="_blank" rel="noopener noreferrer" class="btn-luxury btn-luxury-filled">
+        <span>Contact Us</span>
+      </a>
+    </div>
+  </div>
+
+  <main class="detail-page">
+    <div class="detail-bg-glow"></div>
+
+    <!-- 404 State -->
+    <div id="detail-404" class="not-found" style="display: none;">
+      <div class="not-found-inner">
+        <span class="text-label block mb-4">Error 404</span>
+        <h1 class="text-editorial text-4xl text-secondary mb-6">Design Not Found</h1>
+        <a href="tiles.html" class="btn-luxury">
+          <span>Return to Catalog</span>
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="detail-content" class="container-main relative z-10">
+      
+      <!-- Back Link -->
+      <div class="detail-back">
+        <a href="tiles.html" class="btn-ghost text-[10px]">← Back to collections</a>
+      </div>
+
+      <div class="detail-grid">
+        <!-- Left: Image & Specs -->
+        <div>
+          <!-- Image Frame -->
+          <div class="detail-image-frame scroll-reveal">
+            <div id="tile-image-container" class="w-full h-full"></div>
+            <div class="detail-image-gradient"></div>
+            <div class="detail-image-accent"></div>
+            <div class="detail-collection-badge" id="tile-collection">Collection</div>
+          </div>
+
+          <!-- Recommended usage -->
+          <div class="detail-specs scroll-reveal delay-200">
+            <div class="detail-spec-row detail-recommended" style="border-top: 1px solid var(--color-glass-border); padding-top: 1.5rem;">
+              <span class="detail-spec-label">Recommended For</span>
+              <span class="detail-spec-value text-right" id="tile-recommended"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Meta -->
+        <div class="detail-right">
+          <div class="scroll-reveal delay-100">
+            <span class="text-label-lg detail-category-label" id="tile-category">Category</span>
+            <h1 class="detail-title" id="tile-name">Tile Name</h1>
+            
+            <div class="detail-price-bar">
+              <div id="tile-price-container"></div>
+            </div>
+            
+            <p class="detail-description" id="tile-description">Description</p>
+
+            <div class="detail-features">
+              <div>
+                <span class="detail-feature-label">Finish</span>
+                <span class="detail-feature-value" id="tile-finish"></span>
+              </div>
+              <div>
+                <span class="detail-feature-label">Color</span>
+                <span class="detail-feature-value" id="tile-color"></span>
+              </div>
+            </div>
+
+            <div class="detail-actions">
+              <a href="#room-simulator" class="btn-luxury btn-luxury-filled" style="background: var(--color-gold); color: #000;">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <span>View in Room</span>
+              </a>
+
+              <a href="#" id="tile-whatsapp-btn" target="_blank" rel="noopener noreferrer" class="btn-luxury">
+                <span>WhatsApp</span>
+              </a>
+
+              <button id="tile-wishlist-btn" class="btn-luxury" aria-label="Wishlist toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                </svg>
+                <span>Save</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Room Visualizer -->
+      <div id="room-simulator" class="room-visualizer scroll-reveal">
+        <div class="room-viz-header">
+          <span class="text-label block mb-4">Interactive Preview</span>
+          <h2 class="text-editorial text-3xl md:text-5xl text-secondary">Room Simulator</h2>
+          <p class="room-viz-header-desc">Simulate dynamic interior layouts matching the design textures.</p>
+        </div>
+
+        <div class="room-viz-frame">
+          <div class="room-viz-tabs">
+            <button class="room-viz-tab active" data-room="livingRoom">
+              Living Room
+              <div class="room-viz-tab-line" style="transform: scaleX(1)"></div>
+            </button>
+            <button class="room-viz-tab" data-room="kitchen">
+              Kitchen
+              <div class="room-viz-tab-line"></div>
+            </button>
+            <button class="room-viz-tab" data-room="bathroom">
+              Bathroom
+              <div class="room-viz-tab-line"></div>
+            </button>
+            <button class="room-viz-tab" data-room="bedroom">
+              Bedroom
+              <div class="room-viz-tab-line"></div>
+            </button>
+          </div>
+
+          <div class="room-viz-display">
+            <!-- Living Room Scene -->
+            <div class="room-viz-scene active" data-room="livingRoom">
+              <div class="w-full h-full relative flex flex-col justify-end p-8 bg-[#09090b]">
+                <img src="" alt="Living Room Mockup" class="room-viz-image" />
+                <div class="room-viz-depth-overlay"></div>
+                
+                <div class="room-viz-info-card glass-elevated">
+                  <div class="room-viz-info-top">
+                    <div class="room-viz-info-line"></div>
+                    <span class="room-viz-info-label">Perspective View</span>
+                  </div>
+                  <h4 class="room-viz-info-title room-viz-active-label">Living Room</h4>
+                  <p class="room-viz-info-desc">Visualization with <span class="room-viz-art-name"></span></p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Kitchen Scene -->
+            <div class="room-viz-scene" data-room="kitchen">
+              <div class="w-full h-full relative flex flex-col justify-end p-8 bg-[#09090b]">
+                <img src="" alt="Kitchen Mockup" class="room-viz-image" />
+                <div class="room-viz-depth-overlay"></div>
+                
+                <div class="room-viz-info-card glass-elevated">
+                  <div class="room-viz-info-top">
+                    <div class="room-viz-info-line"></div>
+                    <span class="room-viz-info-label">Perspective View</span>
+                  </div>
+                  <h4 class="room-viz-info-title room-viz-active-label">Kitchen</h4>
+                  <p class="room-viz-info-desc">Visualization with <span class="room-viz-art-name"></span></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bathroom Scene -->
+            <div class="room-viz-scene" data-room="bathroom">
+              <div class="w-full h-full relative flex flex-col justify-end p-8 bg-[#09090b]">
+                <img src="" alt="Bathroom Mockup" class="room-viz-image" />
+                <div class="room-viz-depth-overlay"></div>
+                
+                <div class="room-viz-info-card glass-elevated">
+                  <div class="room-viz-info-top">
+                    <div class="room-viz-info-line"></div>
+                    <span class="room-viz-info-label">Perspective View</span>
+                  </div>
+                  <h4 class="room-viz-info-title room-viz-active-label">Bathroom</h4>
+                  <p class="room-viz-info-desc">Visualization with <span class="room-viz-art-name"></span></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bedroom Scene -->
+            <div class="room-viz-scene" data-room="bedroom">
+              <div class="w-full h-full relative flex flex-col justify-end p-8 bg-[#09090b]">
+                <img src="" alt="Bedroom Mockup" class="room-viz-image" />
+                <div class="room-viz-depth-overlay"></div>
+                
+                <div class="room-viz-info-card glass-elevated">
+                  <div class="room-viz-info-top">
+                    <div class="room-viz-info-line"></div>
+                    <span class="room-viz-info-label">Perspective View</span>
+                  </div>
+                  <h4 class="room-viz-info-title room-viz-active-label">Bedroom</h4>
+                  <p class="room-viz-info-desc">Visualization with <span class="room-viz-art-name"></span></p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Related Tiles -->
+      <div id="related-section" class="related-section scroll-reveal" style="display: none;">
+        <div class="related-header">
+          <div>
+            <span class="text-label block mb-3">Matching Aesthetics</span>
+            <h2 class="text-editorial text-3xl md:text-4xl text-secondary">Similar Designs</h2>
+          </div>
+          <a href="tiles.html" class="btn-ghost hidden sm:inline-flex">View All</a>
+        </div>
+        <div class="related-grid" id="related-grid">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-bg-glow"></div>
+    <div class="footer-top">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand-logo">
+            <img src="images/logo.webp" alt="BH Logo" class="footer-brand-icon" width="48" height="48" style="object-fit: cover;" />
+            <div>
+              <div class="footer-brand-name">BHARAT</div>
+              <div class="footer-brand-sub">Hardware</div>
+            </div>
+          </div>
+          <p class="footer-brand-desc">Curating the finest tiles, marbles, and sanitaryware to transform your vision into an architectural masterpiece.</p>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/bharathardwareeee" target="_blank" rel="noopener noreferrer" class="footer-social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            <a href="https://wa.me/919101400814" target="_blank" rel="noopener noreferrer" class="footer-social-link whatsapp">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.896-1.596-5.54-4.24-7.136-7.136l1.292-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Explore</h4>
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="tiles.html" class="footer-link">Collections</a>
+          <a href="index.html#showroom" class="footer-link">Our Showroom</a>
+          <a href="wishlist.html" class="footer-link">Wishlist</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <a href="tel:+919101400814" class="footer-contact-link">+91 9101400814</a>
+          <a href="https://wa.me/919101400814" target="_blank" rel="noopener noreferrer" class="footer-contact-link">WhatsApp Us</a>
+          <a href="https://www.google.com/maps/place/Bharat+hardware/@24.8706071,92.5578359,840m/data=!3m2!1e3!4b1!4m6!3m5!1s0x374e2d728ca3400f:0xbabaece133f0a3d9!8m2!3d24.8706072!4d92.5627068!16s%2Fg%2F11ghq5xqkj?hl=en&entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="footer-directions mt-4">
+            <span class="footer-directions-line"></span>
+            Get Directions
+          </a>
+        </div>
+
+        <div class="footer-column">
+          <h4>Showroom</h4>
+          <div class="footer-showroom">
+            <p>Bharat Hardware Pvt Ltd<br/>Badarpur, Assam<br/>India - 788806</p>
+          </div>
+          <div class="footer-hours-box">
+            <div class="footer-hours-label">Business Hours</div>
+            <div class="footer-hours-row">
+              <span>Tue - Sun</span>
+              <span class="time">Open</span>
+            </div>
+            <div class="footer-hours-row">
+              <span>Monday</span>
+              <span class="closed">Closed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-inner">
+        <div class="footer-copyright">© 2024 Bharat Hardware Pvt Ltd. All rights reserved.</div>
+        <div class="footer-tagline">Premium Architectural Surfaces</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOATING BUTTON -->
+  <a href="https://wa.me/919101400814" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.896-1.596-5.54-4.24-7.136-7.136l1.292-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+    </svg>
+  </a>
+
+  <!-- CHATBOT -->
+  <button class="chatbot-toggle closed" aria-label="Toggle Chat">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
+    </svg>
+  </button>
+
+  <div class="chatbot-window">
+    <div class="chatbot-header">
+      <div class="chatbot-avatar"><span>B</span></div>
+      <div>
+        <div class="chatbot-header-title">Bharat Hardware Guide</div>
+        <div class="chatbot-header-status">
+          <div class="chatbot-status-dot"></div>
+          <span class="chatbot-status-text">Online</span>
+        </div>
+      </div>
+    </div>
+    <div class="chatbot-messages">
+      <!-- Messages injected here -->
+    </div>
+    <div class="chatbot-quick-actions">
+      <!-- Quick actions injected here -->
+    </div>
+    <div class="chatbot-input-form">
+      <a href="tel:+919101400814" class="chatbot-contact-btn call-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.896-1.596-5.54-4.24-7.136-7.136l1.292-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+        </svg>
+        <span>Call Store</span>
+      </a>
+      <a href="https://wa.me/919101400814" target="_blank" rel="noopener noreferrer" class="chatbot-contact-btn wa-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
+        </svg>
+        <span>WhatsApp</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ROOM LIGHTBOX MODAL -->
+  <div id="room-lightbox" class="room-lightbox">
+    <button class="room-lightbox-close" aria-label="Close Lightbox">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <div class="room-lightbox-content">
+      <img id="room-lightbox-img" src="" alt="Full Room Preview" />
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="js/data.js" defer></script>
+  <script src="js/wishlist.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/tile-detail.js" defer></script>
+</body>
+</html>
