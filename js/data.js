@@ -24,7 +24,8 @@ const tiles = [
     finish: 'Glossy Marble', color: 'White with Black & Gold Veins', texture: 'Expressive Marble',
     description: 'An exquisite recreation of natural Calacatta marble, featuring dramatic gold and grey veining on a pristine white canvas. This tile brings timeless Italian elegance to any space.',
     recommendedUsage: 'Living Room, Bedroom, Lobby',
-    featured: true,
+    featured: false,
+    size: '4x2',
   },
   {
     id: 2, slug: 'ocean-blue-spider-marble', name: 'Ocean Blue Spider Marble', category: 'Marble Finish', collection: 'Elite',
@@ -32,7 +33,8 @@ const tiles = [
     finish: 'High Gloss', color: 'Deep Blue', texture: 'Fine White Spider Webbing',
     description: 'The epitome of luxury, this deep black tile features striking white veining that creates a dramatic visual statement. Perfect for those who demand sophistication.',
     recommendedUsage: 'Living Room, Bathroom, Feature Wall',
-    featured: true,
+    featured: false,
+    size: '4x2',
   },
   {
     id: 3, slug: 'calacatta-rust-vein', name: 'Calacatta Rust Vein', category: 'Floor Tiles', collection: 'Classico',
@@ -41,6 +43,7 @@ const tiles = [
     description: 'Inspired by Spanish Emperador marble, this rich brown tile exudes warmth and grandeur. The subtle cream veining adds depth and character to every installation.',
     recommendedUsage: 'Living Room, Dining Room, Office',
     featured: false,
+    size: '4x2',
   },
   {
     id: 4, slug: 'sapphire-gold-swirl', name: 'Sapphire Gold Swirl', category: 'Wall Tiles', collection: 'Classico',
@@ -49,6 +52,7 @@ const tiles = [
     description: 'A refined interpretation of Statuario marble with delicate grey veining on a luminous pearl-white surface. Ideal for creating bright, sophisticated wall treatments.',
     recommendedUsage: 'Bathroom Walls, Kitchen Backsplash, Lobby',
     featured: false,
+    size: '4x2',
   },
   {
     id: 5, slug: 'azure-pearl-spider', name: 'Azure Pearl Spider', category: 'Floor Tiles', collection: 'Moderna',
@@ -57,6 +61,7 @@ const tiles = [
     description: 'A sophisticated grey marble recreation with dark dramatic veining. This tile brings understated luxury and contemporary elegance to modern interiors.',
     recommendedUsage: 'Living Room, Office, Commercial Spaces',
     featured: false,
+    size: '4x2',
   },
   {
     id: 6, slug: 'pastel-star-wood-deco', name: 'Pastel Star Wood Deco', category: 'Floor Tiles', collection: 'Natura',
@@ -65,6 +70,7 @@ const tiles = [
     description: 'Warm desert-inspired tones create a welcoming atmosphere. This beige tile combines natural beauty with versatile functionality for any living space.',
     recommendedUsage: 'Living Room, Bedroom, Kitchen',
     featured: false,
+    size: '4x2',
   },
   {
     id: 7, slug: 'pearl-cloud-marble', name: 'Pearl Cloud Marble', category: 'Floor Tiles', collection: 'Natura',
@@ -73,6 +79,7 @@ const tiles = [
     description: 'Authentic travertine reproduction with natural pitting and warm walnut tones. This tile brings old-world charm with modern durability.',
     recommendedUsage: 'Living Room, Patio, Entryway',
     featured: false,
+    size: '4x2',
   },
   {
     id: 8, slug: 'mint-gold-crystal-onyx', name: 'Mint Gold Crystal Onyx', category: 'Marble Finish', collection: 'Elite',
@@ -80,7 +87,8 @@ const tiles = [
     finish: 'High Gloss', color: 'Light Mint Blue', texture: 'White & Gold Diagonal Veins',
     description: 'A mesmerizing recreation of natural onyx with warm amber and golden tones. This tile adds an extraordinary luminous quality to luxury interiors.',
     recommendedUsage: 'Feature Wall, Lobby, Bar Counter',
-    featured: true,
+    featured: false,
+    size: '4x2',
   },
   {
     id: 9, slug: 'grigio-cloud-marble', name: 'Grigio Cloud Marble', category: 'Floor Tiles', collection: 'Natura',
@@ -89,6 +97,7 @@ const tiles = [
     description: 'Ultra-realistic wood grain porcelain plank that captures the warmth of natural Baltic pine. All the beauty of hardwood with the durability of porcelain.',
     recommendedUsage: 'Bedroom, Living Room, Study',
     featured: false,
+    size: '4x2',
   },
   {
     id: 10, slug: 'white-gold-crackle', name: 'White Gold Crackle', category: 'Bathroom Tiles', collection: 'Classico',
@@ -97,6 +106,7 @@ const tiles = [
     description: 'The eternal beauty of Carrara marble, captured in durable ceramic. Fine grey veining on pristine white creates the perfect backdrop for elegant bathrooms.',
     recommendedUsage: 'Bathroom, Powder Room, Spa',
     featured: false,
+    size: '4x2',
   },
   {
     id: 11, slug: 'mocha-white-streak', name: 'Mocha White Streak', category: 'Wall Tiles', collection: 'Elite',
@@ -104,7 +114,8 @@ const tiles = [
     finish: 'Super Glossy', color: 'Chocolate Brown', texture: 'Sharp White Streaks',
     description: 'Pure obsidian-black tile with a mirror-like super glossy finish. Creates breathtaking feature walls and dramatic flooring statements.',
     recommendedUsage: 'Feature Wall, Bar, Commercial',
-    featured: true,
+    featured: false,
+    size: '4x2',
   },
   {
     id: 12, slug: 'statuario-pure-white', name: 'Statuario Pure White', category: 'Kitchen Tiles', collection: 'Artisan',
@@ -113,6 +124,7 @@ const tiles = [
     description: 'A warm cream tile inspired by Valencia limestone with a gentle satin finish. Its neutral elegance makes it the perfect canvas for kitchen and dining spaces.',
     recommendedUsage: 'Kitchen, Dining Room, Corridor',
     featured: false,
+    size: '4x2',
   },
   {
     id: 13, slug: 'woven-azure-deco', name: 'Woven Azure Deco', category: 'Outdoor Tiles', collection: 'Natura',
@@ -121,6 +133,7 @@ const tiles = [
     description: 'Rugged and robust, this outdoor tile features earthy terracotta tones with an anti-skid surface designed for patios, pathways, and garden spaces.',
     recommendedUsage: 'Patio, Garden, Driveway, Balcony',
     featured: false,
+    size: '12x18',
   },
   {
     id: 14, slug: 'gold-ribbon-agate', name: 'Gold Ribbon Agate', category: 'Bathroom Tiles', collection: 'Moderna',
@@ -129,6 +142,7 @@ const tiles = [
     description: 'A cool, serene white tile with subtle blue undertones that evokes the pristine beauty of arctic landscapes. Perfect for creating clean, spa-like environments.',
     recommendedUsage: 'Bathroom, Spa, Washroom',
     featured: false,
+    size: '4x2',
   },
   {
     id: 15, slug: 'white-black-spiderweb', name: 'White Black Spiderweb', category: 'Wall Tiles', collection: 'Artisan',
@@ -137,6 +151,7 @@ const tiles = [
     description: 'A romantic, soft pink marble-effect tile that brings a touch of Venetian elegance. Delicate cream veining adds sophisticated charm to feature walls.',
     recommendedUsage: 'Bedroom Wall, Bathroom, Boutique',
     featured: false,
+    size: '4x2',
   },
   {
     id: 16, slug: 'taupe-pearl-vein', name: 'Taupe Pearl Vein', category: 'Outdoor Tiles', collection: 'Moderna',
@@ -145,6 +160,7 @@ const tiles = [
     description: 'Inspired by Nordic stone formations, this structured tile features a split-face texture in cool silver grey. Built to withstand outdoor conditions with style.',
     recommendedUsage: 'Terrace, Pathway, Pool Deck',
     featured: false,
+    size: '4x2',
   },
   {
     id: 17, slug: 'black-gold-portoro', name: 'Black Gold Portoro', category: 'Kitchen Tiles', collection: 'Artisan',
@@ -153,6 +169,7 @@ const tiles = [
     description: 'A striking bronze-toned tile with a subtle metallic sheen. This artisan design brings industrial warmth and character to kitchen and dining spaces.',
     recommendedUsage: 'Kitchen, Restaurant, Café',
     featured: false,
+    size: '4x2',
   },
   {
     id: 18, slug: 'sage-black-crackle', name: 'Sage Black Crackle', category: 'Floor Tiles', collection: 'Moderna',
@@ -161,6 +178,7 @@ const tiles = [
     description: 'A modern slate-inspired tile in deep charcoal with authentic layered texture. Brings a zen-like calm and contemporary sophistication to any space.',
     recommendedUsage: 'Living Room, Study, Yoga Studio',
     featured: false,
+    size: '4x2',
   },
   {
     id: 19, slug: 'imperial-green-onyx', name: 'Imperial Green Onyx', category: 'Marble Finish', collection: 'Elite',
@@ -168,7 +186,8 @@ const tiles = [
     finish: 'High Gloss', color: 'Imperial Green with Golden Honey Veining', texture: 'Translucent Onyx',
     description: 'An exceptionally rare green onyx recreation displaying deep emerald swirls and luminous golden-honey veining, creating an ambiance of grand luxury.',
     recommendedUsage: 'Feature Wall, Lobby, Dining Room',
-    featured: true,
+    featured: false,
+    size: '4x2',
   },
   {
     id: 20, slug: 'calacatta-gold-classic', name: 'Calacatta Gold Classic', category: 'Marble Finish', collection: 'Classico',
@@ -177,6 +196,7 @@ const tiles = [
     description: 'A masterpiece of classic Italian style, showing striking grey and golden-bronze veins cutting across a warm alabaster white surface.',
     recommendedUsage: 'Living Room, Bedroom, Lobby',
     featured: true,
+    size: '4x2',
   },
   {
     id: 21, slug: 'noir-st-laurent', name: 'Noir St. Laurent', category: 'Floor Tiles', collection: 'Elite',
@@ -184,7 +204,8 @@ const tiles = [
     finish: 'Polished', color: 'Deep Black with Bronze and White Veins', texture: 'Fine Veined Marble',
     description: 'A luxurious dark marble tile featuring rich cocoa brown and white crystalline veins running across a deep carbon black background.',
     recommendedUsage: 'Living Room, Commercial, Executive Office',
-    featured: false,
+    featured: true,
+    size: '4x2',
   },
   {
     id: 22, slug: 'crema-marfil-premium', name: 'Crema Marfil Premium', category: 'Floor Tiles', collection: 'Classico',
@@ -192,7 +213,8 @@ const tiles = [
     finish: 'Satin', color: 'Soft Ivory Cream', texture: 'Subtle Fossilized Details',
     description: 'The epitome of warm Mediterranean design, this ivory-cream tile features delicate, feathery veins for a subtle, elegant look.',
     recommendedUsage: 'Living Room, Bedroom, Dining Room',
-    featured: false,
+    featured: true,
+    size: '4x2',
   },
   {
     id: 23, slug: 'arabescato-white', name: 'Arabescato White', category: 'Wall Tiles', collection: 'Classico',
@@ -200,7 +222,8 @@ const tiles = [
     finish: 'Glossy', color: 'White with Dramatic Dark Grey Swirls', texture: 'Bold Brecciated Marble',
     description: 'Featuring dramatic, rounded dark grey waves wrapping around pure white crystalline islands, this wall tile creates spectacular accent features.',
     recommendedUsage: 'Bathroom Walls, Kitchen Backsplash, Accent Wall',
-    featured: false,
+    featured: true,
+    size: '4x2',
   },
   {
     id: 24, slug: 'silver-travertine', name: 'Silver Travertine', category: 'Outdoor Tiles', collection: 'Natura',
@@ -209,6 +232,7 @@ const tiles = [
     description: 'Recreating the banded structure of travertine, this ash-grey outdoor tile offers a slip-resistant surface with an organic, contemporary feel.',
     recommendedUsage: 'Patio, Pool Deck, Balcony, Pathway',
     featured: false,
+    size: '4x2',
   },
   {
     id: 25, slug: 'royal-azure-lapis', name: 'Royal Azure Lapis', category: 'Wall Tiles', collection: 'Elite',
@@ -216,7 +240,8 @@ const tiles = [
     finish: 'Super Glossy', color: 'Vibrant Cobalt Blue and Gold', texture: 'Semi-Precious Stone Swirls',
     description: 'Inspired by the precious Lapis Lazuli stone, this tile boasts deep cobalt blue swirls mixed with shining golden pyrite veins for an majestic look.',
     recommendedUsage: 'Feature Wall, Reception, Luxury Spa',
-    featured: true,
+    featured: false,
+    size: '4x2',
   },
   {
     id: 26, slug: 'golden-portoro-extra', name: 'Golden Portoro Extra', category: 'Kitchen Tiles', collection: 'Artisan',
@@ -225,6 +250,7 @@ const tiles = [
     description: 'A stunning representation of Portoro marble, featuring bold golden and white waves dancing across a polished black ocean.',
     recommendedUsage: 'Kitchen Floor, Dining Area, Fireplace Surround',
     featured: false,
+    size: '4x2',
   },
   {
     id: 27, slug: 'earthy-terrazzo-speckle', name: 'Earthy Terrazzo Speckle', category: 'Kitchen Tiles', collection: 'Artisan',
@@ -233,6 +259,7 @@ const tiles = [
     description: 'A playful yet elegant terrazzo recreation combining warm terracotta chips with white and grey aggregate specks for a lively kitchen design.',
     recommendedUsage: 'Kitchen Floor, Café, Accent Wall',
     featured: false,
+    size: '4x2',
   },
   {
     id: 28, slug: 'pistachio-crackle-glaze', name: 'Pistachio Crackle Glaze', category: 'Bathroom Tiles', collection: 'Artisan',
@@ -241,6 +268,7 @@ const tiles = [
     description: 'A handcraft-inspired wall tile with a glossy glaze and fine crackle lines, bringing soft botanical tones and vintage character to bathrooms.',
     recommendedUsage: 'Bathroom Walls, Shower Enclosure, Backsplash',
     featured: false,
+    size: '4x2',
   },
   {
     id: 29, slug: 'steel-grey-basalt', name: 'Steel Grey Basalt', category: 'Outdoor Tiles', collection: 'Moderna',
@@ -249,6 +277,7 @@ const tiles = [
     description: 'An elegant dark grey tile mimicking volcanic basalt stone. Highly slip-resistant, scratch-resistant, and perfect for high-traffic outdoor pavements.',
     recommendedUsage: 'Driveway, Terrace, Outdoor Staircase',
     featured: false,
+    size: '4x2',
   },
   {
     id: 30, slug: 'warm-walnut-plank', name: 'Warm Walnut Plank', category: 'Floor Tiles', collection: 'Natura',
@@ -257,6 +286,7 @@ const tiles = [
     description: 'Capture the luxury of fine hardwood floors with this warm walnut plank tile. Resistant to water and scratches, it brings rustic charm to any interior.',
     recommendedUsage: 'Bedroom, Living Room, Dining Room',
     featured: false,
+    size: '4x2',
   },
 ];
 
