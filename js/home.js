@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 1. TESTIMONIAL CAROUSEL
   const slides = document.querySelectorAll('.testimonial-slide');
   const dots = document.querySelectorAll('.testimonial-dot');
-  
+
   if (slides.length > 0 && dots.length > 0) {
     let currentSlide = 0;
     let autoplayInterval;
@@ -60,23 +60,23 @@ document.addEventListener('DOMContentLoaded', () => {
   if (featuredGrid && typeof getFeaturedTiles !== 'undefined') {
     const featuredTilesList = getFeaturedTiles().slice(0, 4);
     featuredGrid.innerHTML = '';
-    
+
     featuredTilesList.forEach((tile, index) => {
       const isWishlisted = Wishlist.isIn(tile.id);
       const gradientClass = `tile-gradient-${tile.id}`;
-      
+
       const imgHtml = (tile.images && tile.images[0])
-        ? `<img src="${tile.images[0]}" alt="${tile.name}" loading="lazy" />` 
+        ? `<img src="${tile.images[0]}" alt="${tile.name}" loading="lazy" />`
         : `<div class="tile-gradient-fill ${gradientClass}"></div>`;
-        
-      const priceHtml = tile.price 
-        ? `<div class="featured-tile-price">${tile.price}</div>` 
+
+      const priceHtml = tile.price
+        ? `<div class="featured-tile-price">${tile.price}</div>`
         : '';
-      
+
       const card = document.createElement('div');
       card.className = 'featured-tile scroll-reveal revealed';
       card.style.transitionDelay = `${index * 0.15}s`;
-      
+
       card.innerHTML = `
         <a href="tile-detail.html?slug=${tile.slug}" class="featured-tile-link">
           <div class="featured-tile-image-wrapper">
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add View More button at the end
     const viewMoreHtml = `
       <div class="w-full flex justify-center mt-12" style="grid-column: 1 / -1; display: flex; justify-content: center; margin-top: 3rem;">
-        <a href="tiles.html" class="btn-luxury btn-luxury-filled" style="background: var(--color-gold); color: #000;">
+        <a href="tiles.html" class="btn-luxury btn-luxury-filled">
           <span>View More</span>
           <span>→</span>
         </a>
@@ -136,11 +136,11 @@ document.addEventListener('DOMContentLoaded', () => {
     collections.forEach((collection, index) => {
       const imageSrc = collectionImages[collection.id.toLowerCase()];
       const bgImage = imageSrc ? `<img src="${imageSrc}" alt="${collection.name}" loading="lazy" />` : `<div class="w-full h-full tile-gradient-${index + 1}"></div>`;
-      
+
       const colCard = document.createElement('div');
       colCard.className = 'collection-card scroll-reveal revealed';
       colCard.style.transitionDelay = `${index * 0.1}s`;
-      
+
       colCard.innerHTML = `
         <a href="tiles.html" class="collection-card-link">
           <div class="collection-card-image">
@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let max = parseInt(img.dataset.max || 30);
         current = current >= max ? 1 : current + 1;
         img.dataset.current = current;
-        
+
         const nextImg = new Image();
         nextImg.src = `images/bharat hardware/${img.dataset.folder}/${current}.webp`;
         nextImg.onload = () => {

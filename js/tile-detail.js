@@ -4,14 +4,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // Get slug from URL
   const urlParams = new URLSearchParams(window.location.search);
   const slug = urlParams.get('slug');
-  
+
   if (!slug) {
     window.location.href = 'tiles.html';
     return;
   }
 
   const tile = getTileBySlug(slug);
-  
+
   if (!tile) {
     document.getElementById('detail-content').style.display = 'none';
     document.getElementById('detail-404').style.display = 'flex';
@@ -23,16 +23,17 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('tile-collection').textContent = `${tile.collection} Collection`;
   document.getElementById('tile-category').textContent = tile.category;
   document.getElementById('tile-name').textContent = tile.name;
-  
+
   const priceContainer = document.getElementById('tile-price-container');
   if (tile.price) {
     priceContainer.innerHTML = `<span class="detail-price">${tile.price}</span><span class="detail-price-sep">|</span>`;
   }
-  
+
   document.getElementById('tile-description').textContent = tile.description;
-  
+
   document.getElementById('tile-finish').textContent = tile.finish;
   document.getElementById('tile-color').textContent = tile.color;
+  document.getElementById('tile-size').textContent = tile.size || '';
 
   // Populate image
   const imageContainer = document.getElementById('tile-image-container');
@@ -43,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  
+
   document.getElementById('tile-recommended').textContent = tile.recommendedUsage;
 
   // Setup WhatsApp button
@@ -64,9 +65,9 @@ document.addEventListener('DOMContentLoaded', () => {
       wishlistBtn.querySelector('svg').classList.remove('fill-red-400');
     }
   };
-  
+
   updateWishlistBtnUI(); // Initial
-  
+
   wishlistBtn.addEventListener('click', () => {
     Wishlist.toggle(tile.id);
     updateWishlistBtnUI();
@@ -104,11 +105,11 @@ document.addEventListener('DOMContentLoaded', () => {
   roomTabs.forEach(tab => {
     tab.addEventListener('click', () => {
       const targetRoom = tab.getAttribute('data-room');
-      
+
       // Update tabs
       roomTabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
-      
+
       // Update scenes
       roomScenes.forEach(scene => {
         if (scene.getAttribute('data-room') === targetRoom) {
@@ -117,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
           scene.classList.remove('active');
         }
       });
-      
+
       // Update labels
       roomLabels.forEach(label => {
         label.textContent = tab.textContent;
@@ -133,23 +134,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (relatedTiles.length > 0) {
     document.getElementById('related-section').style.display = 'block';
-    
+
     // Copy the createTileCard function logic from catalog.js (simplified here since we don't have modules)
     relatedTiles.forEach((relatedTile, index) => {
       const isWishlisted = Wishlist.isIn(relatedTile.id);
       const gradientClass = `tile-gradient-${relatedTile.id}`;
-      
+
       const card = document.createElement('div');
       card.className = 'tile-card';
       card.style.transitionDelay = `${index * 0.1}s`;
-      
+
       card.innerHTML = `
         <a href="tile-detail.html?slug=${relatedTile.slug}" class="tile-card-link">
           <div class="tile-card-image">
-            ${relatedTile.images && relatedTile.images[0] 
-              ? `<img src="${relatedTile.images[0]}" alt="${relatedTile.name}" loading="lazy" />` 
-              : `<div class="tile-gradient-fill ${gradientClass}"></div>`
-            }
+            ${relatedTile.images && relatedTile.images[0]
+          ? `<img src="${relatedTile.images[0]}" alt="${relatedTile.name}" loading="lazy" />`
+          : `<div class="tile-gradient-fill ${gradientClass}"></div>`
+        }
             <div class="tile-card-hover-overlay"></div>
             <div class="tile-card-gold-line"></div>
             
@@ -184,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Add heart button listener
       const heartBtn = card.querySelector('.tile-heart-btn');
       heartBtn.addEventListener('click', (e) => {
-        e.preventDefault(); 
+        e.preventDefault();
         Wishlist.toggle(relatedTile.id);
         if (Wishlist.isIn(relatedTile.id)) {
           heartBtn.classList.add('wishlisted');

@@ -147,7 +147,8 @@ function initChatbot() {
 
   // Toggle chat window
 
-  toggleBtn.addEventListener('click', () => {
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
     isOpen = !isOpen;
     if (isOpen) {
       chatWindow.classList.add('open');
